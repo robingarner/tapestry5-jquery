@@ -8,6 +8,7 @@ apply plugin: "project-report"
 
 apply plugin: 'war'
 apply plugin: 'jetty'
+apply plugin: 'eclipse-wtp'
 
 // Specific to top-level build, not set for subprojects:
   version = "3.4.2"
@@ -41,7 +42,7 @@ def spock = "0.6-groovy-1.8"
 
 
 repositories {
-	mavenLocal()
+//	mavenLocal()
     mavenCentral()
     //mavenRepo urls: "https://repository.apache.org/content/repositories/staging/"
         

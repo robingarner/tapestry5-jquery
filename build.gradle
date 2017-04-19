@@ -11,7 +11,7 @@ apply plugin: 'jetty'
 apply plugin: 'eclipse-wtp'
 
 // Specific to top-level build, not set for subprojects:
-  version = "3.4.2"
+  version = "3.5.2-PATCHED"
   group = "org.got5"
 
 configurations {
@@ -39,6 +39,7 @@ Project projectDef = project;
 def tapestryVersion = "5.3.8"
 def servletapi = "2.5"
 def spock = "0.6-groovy-1.8"
+def browserStartCommand = "firefox"
 
 
 repositories {
@@ -97,6 +98,7 @@ task testng(type: Test) {
      options.suites("src/test/conf/testng.xml")
      maxHeapSize = "400M"
      systemProperties["tapestry.service-reloading-enabled"] = "false"
+     systemProperties["BROWSER"] = "firefox"
      jvmArgs("-XX:MaxPermSize=512m")
      logging.captureStandardOutput LogLevel.INFO
      getLogging().setLevel(LogLevel.INFO)
